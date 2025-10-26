@@ -63,7 +63,7 @@ export default function Header() {
                                 : 'hover:text-orange-700 hover:bg-white/10'
                         }`}
                     >
-                        🏠 Início
+                        Início
                         {isActive('/') && (
                             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-orange-500 rounded-full"></span>
                         )}
