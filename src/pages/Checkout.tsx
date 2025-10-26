@@ -136,7 +136,7 @@ export default function Checkout() {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-50">
                 <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto mb-4"></div>
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
                     <p className="text-gray-600">Carregando...</p>
                 </div>
             </div>
@@ -144,7 +144,7 @@ export default function Checkout() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 py-8">
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-8">
             <div className="container mx-auto px-4 max-w-6xl">
                 {/* Cabeçalho */}
                 <div className="text-center mb-8">
@@ -157,7 +157,7 @@ export default function Checkout() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Resumo do Pedido */}
                     <div className="lg:col-span-1">
-                        <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-8">
+                        <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-8 border border-gray-200">
                             <h2 className="text-xl font-bold text-gray-800 mb-4">Resumo do Pedido</h2>
 
                             <div className="space-y-4 mb-6">
@@ -172,7 +172,7 @@ export default function Checkout() {
                                 <div className="border-t pt-4">
                                     <div className="flex justify-between items-center text-lg font-bold">
                                         <span>Total</span>
-                                        <span className="text-orange-600">R$ {plano.preco}</span>
+                                        <span className="text-blue-600">R$ {plano.preco}</span>
                                     </div>
                                 </div>
                             </div>
@@ -180,19 +180,19 @@ export default function Checkout() {
                             {/* Progresso */}
                             <div className="space-y-2">
                                 <div className="flex justify-between text-sm">
-                                    <span className={etapa >= 1 ? "text-orange-600 font-semibold" : "text-gray-400"}>
+                                    <span className={etapa >= 1 ? "text-blue-600 font-semibold" : "text-gray-400"}>
                                         1. Dados Pessoais
                                     </span>
-                                    <span className={etapa >= 2 ? "text-orange-600 font-semibold" : "text-gray-400"}>
+                                    <span className={etapa >= 2 ? "text-blue-600 font-semibold" : "text-gray-400"}>
                                         2. Pagamento
                                     </span>
-                                    <span className={etapa >= 3 ? "text-orange-600 font-semibold" : "text-gray-400"}>
+                                    <span className={etapa >= 3 ? "text-blue-600 font-semibold" : "text-gray-400"}>
                                         3. Confirmação
                                     </span>
                                 </div>
                                 <div className="w-full bg-gray-200 rounded-full h-2">
                                     <div
-                                        className="bg-orange-500 h-2 rounded-full transition-all duration-300"
+                                        className="bg-blue-600 h-2 rounded-full transition-all duration-300"
                                         style={{ width: `${(etapa / 3) * 100}%` }}
                                     ></div>
                                 </div>
@@ -203,7 +203,7 @@ export default function Checkout() {
                     {/* Formulário */}
                     <div className="lg:col-span-2">
                         {etapa === 1 && (
-                            <div className="bg-white rounded-2xl shadow-lg p-6">
+                            <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
                                 <h2 className="text-xl font-bold text-gray-800 mb-6">Dados Pessoais</h2>
 
                                 <form className="space-y-4">
@@ -217,7 +217,7 @@ export default function Checkout() {
                                                 name="nome"
                                                 value={formData.nome}
                                                 onChange={handleInputChange}
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                                                 required
                                             />
                                         </div>
@@ -230,7 +230,7 @@ export default function Checkout() {
                                                 name="email"
                                                 value={formData.email}
                                                 onChange={handleInputChange}
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                                                 required
                                             />
                                         </div>
@@ -246,7 +246,7 @@ export default function Checkout() {
                                                 name="telefone"
                                                 value={formData.telefone}
                                                 onChange={handleInputChange}
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                                                 required
                                             />
                                         </div>
@@ -259,7 +259,7 @@ export default function Checkout() {
                                                 name="cpf"
                                                 value={formData.cpf}
                                                 onChange={handleInputChange}
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                                                 required
                                             />
                                         </div>
@@ -269,7 +269,7 @@ export default function Checkout() {
                                         <button
                                             type="button"
                                             onClick={() => setEtapa(2)}
-                                            className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition"
+                                            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                                             disabled={!formData.nome || !formData.email || !formData.telefone || !formData.cpf}
                                         >
                                             Continuar para Pagamento
@@ -280,7 +280,7 @@ export default function Checkout() {
                         )}
 
                         {etapa === 2 && (
-                            <div className="bg-white rounded-2xl shadow-lg p-6">
+                            <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
                                 <h2 className="text-xl font-bold text-gray-800 mb-6">Pagamento</h2>
 
                                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -294,7 +294,7 @@ export default function Checkout() {
                                             value={formData.numeroCartao}
                                             onChange={handleInputChange}
                                             placeholder="0000 0000 0000 0000"
-                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                                             required
                                         />
                                     </div>
@@ -308,7 +308,7 @@ export default function Checkout() {
                                             name="nomeCartao"
                                             value={formData.nomeCartao}
                                             onChange={handleInputChange}
-                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                                             required
                                         />
                                     </div>
@@ -324,7 +324,7 @@ export default function Checkout() {
                                                 value={formData.validade}
                                                 onChange={handleInputChange}
                                                 placeholder="MM/AA"
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                                                 required
                                             />
                                         </div>
@@ -338,7 +338,7 @@ export default function Checkout() {
                                                 value={formData.cvv}
                                                 onChange={handleInputChange}
                                                 placeholder="123"
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
                                                 required
                                             />
                                         </div>
@@ -348,13 +348,13 @@ export default function Checkout() {
                                         <button
                                             type="button"
                                             onClick={() => setEtapa(1)}
-                                            className="flex-1 border border-gray-300 text-gray-700 py-3 rounded-lg font-semibold transition hover:bg-gray-50"
+                                            className="flex-1 border border-gray-300 text-gray-700 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-50 hover:scale-105"
                                         >
                                             Voltar
                                         </button>
                                         <button
                                             type="submit"
-                                            className="flex-1 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition disabled:opacity-50"
+                                            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                                             disabled={loading || !formData.numeroCartao || !formData.nomeCartao || !formData.validade || !formData.cvv}
                                         >
                                             {loading ? (
@@ -372,9 +372,9 @@ export default function Checkout() {
                         )}
 
                         {etapa === 3 && (
-                            <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-                                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="bg-white rounded-2xl shadow-lg p-8 text-center border border-gray-200">
+                                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                 </div>
@@ -390,13 +390,13 @@ export default function Checkout() {
                                 <div className="space-y-4">
                                     <button
                                         onClick={() => navigate('/lancamentos')}
-                                        className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition"
+                                        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
                                     >
                                         Acessar Minha Conta
                                     </button>
                                     <button
                                         onClick={() => navigate('/')}
-                                        className="w-full border border-gray-300 text-gray-700 py-3 rounded-lg font-semibold transition hover:bg-gray-50"
+                                        className="w-full border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
                                     >
                                         Voltar para Home
                                     </button>
