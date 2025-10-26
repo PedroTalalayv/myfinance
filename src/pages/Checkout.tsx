@@ -132,10 +132,6 @@ export default function Checkout() {
         setEtapa(3); // Ir para etapa de confirmação
     };
 
-    const formatarCartao = (numero: string) => {
-        return numero.replace(/(\d{4})/g, '$1 ').trim();
-    };
-
     if (!plano) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-gray-50">
